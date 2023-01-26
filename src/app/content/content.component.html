@@ -1,0 +1,317 @@
+<div class="container">
+    <div class="row">
+        <h2 class="headerStyle"><b>
+                Create job request</b></h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 offset-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form [formGroup]="theForm" (ngSubmit)="onSubmit()">
+                                <div class="row rowBottom">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="formLabel">Job title</label>
+                                            <input type="text" class="form-control formInputStyle"
+                                                placeholder="Job title" value="Technology Analyst" formControlName="jobTitle"
+                                                [ngClass]="{ 'is-invalid': submitted && f.jobTitle.errors }">
+                                                <div *ngIf="submitted && f.jobTitle.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.jobTitle.errors.required">Job title is required</div>
+                                                  </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="formLabel">Email address</label>
+                                            <input type="email" class="form-control formInputStyle"
+                                                placeholder="Enter email" value="" formControlName="email"
+                                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                                    <div *ngIf="f.email.errors.email">Email is invalid</div>
+                                                  </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row rowBottom">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="formLabel">Request date</label>
+                                            <div class="input-group">
+
+                                            <input type="text" class="form-control formInputStyle"
+                                                 value="">
+                                                <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5 fieldIcons" type="button">
+                                                    <img src="assets/Images/icon-calendar.png" class="fieldIcons">
+                                                </button>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="form-group">
+                                            <label class="formLabel">Time</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control formInputStyle"
+                                                 value="">
+                                                <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5 fieldIcons" type="button">
+                                                    <img src="assets/Images/icon-time.png" class="fieldIcons">
+                                                </button>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="formLabel">Location</label>
+                                            <input type="text" class="form-control formInputStyle"
+                                                placeholder="Location" value="Bangalore" formControlName="location"
+                                                [ngClass]="{ 'is-invalid': submitted && f.location.errors }">
+                                                <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+                                            <div *ngIf="f.location.errors.required">Location is required</div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row rowBottom">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="formLabel">Quarter</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control formInputStyle"
+                                                placeholder="" value="Q3" formControlName="quarter"
+                                                [ngClass]="{ 'is-invalid': submitted && f.quarter.errors }">
+                                                <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5 fieldIcons" type="button">
+                                                    <img src="assets/Images/icon-downward.png" class="fieldIcons">
+                                                </button>
+                                                <div *ngIf="submitted && f.quarter.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.quarter.errors.required">Quarter is required</div>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="formLabel">State <span><img src="assets/Images/icon-info.png"></span></label>
+                                            <input type="text" class="form-control formInputStyle"
+                                                placeholder="State" value="Karnataka" formControlName="state"
+                                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.state.errors.required">State is required</div>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="formLabel">Primary skill</label>
+                                        <div class="form-group">
+                                            <button *ngIf="angular" class="btn btn-outline-secondary bg-white ms-n5 radioIcon" type="button" (click)="onSkill(angular)">
+                                                <img src="assets/Images/Base-1.png">
+                                            </button>
+                                            <button *ngIf="!angular" class="btn btn-outline-secondary bg-white ms-n5 radioIcon" type="button" (click)="onSkill(react)">
+                                                <img src="assets/Images/Base.png">
+                                            </button>
+                                                <label class="formLabel">Angular</label>
+                                                <button *ngIf="react" class="btn btn-outline-secondary bg-white ms-n5 radioIcon" type="button" (click)="onSkill(angular)">
+                                                    <img src="assets/Images/Base-1.png">
+                                                </button>
+                                                <button *ngIf="!react" class="btn btn-outline-secondary bg-white ms-n5 radioIcon" type="button" (click)="onSkill(react)">
+                                                    <img src="assets/Images/Base.png">
+                                                </button>
+                                                <label class="formLabel">React</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottomCard">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <b>
+                                        <label class="titleLabel">Educational requirement</label>
+                                    </b>
+                                </div>
+                            </div> 
+                            <div class="row topDiv">
+                                <div class="col-lg-12">
+                                    <table class="table table-hover">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Educational</th>
+                                            <th scope="col">Field of education</th>
+                                            <th scope="col">Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>Graduation/Bachelors/Equivalent</td>
+                                            <td>Bachelor in engineering</td>
+                                            <td> 
+                                                <button class="btn btn-outline-secondary bg-white ms-n5 editIcon " type="button">
+                                                    <img src="assets/Images/icon-edit.png">
+                                                </button>
+                                                <button class="btn btn-outline-secondary bg-white ms-n5 trashIcon " type="button">
+                                                    <img src="assets/Images/icon-trash.png">
+                                                </button>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Graduation/Bachelors/Equivalent</td>
+                                            <td>Bachelor in engineering</td>
+                                            <td>
+                                                <button class="btn btn-outline-secondary bg-white ms-n5 editIcon " type="button">
+                                                    <img src="assets/Images/icon-edit.png">
+                                                </button>
+                                                <button class="btn btn-outline-secondary bg-white ms-n5 trashIcon " type="button">
+                                                    <img src="assets/Images/icon-trash.png">
+                                                </button>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Graduation/Bachelors/Equivalent</td>
+                                            <td>Bachelor in engineering</td>
+                                            <td>
+                                                <button class="btn btn-outline-secondary bg-white ms-n5 editIcon " type="button">
+                                                    <img src="assets/Images/icon-edit.png">
+                                                </button>
+                                                <button class="btn btn-outline-secondary bg-white ms-n5 trashIcon " type="button">
+                                                    <img src="assets/Images/icon-trash.png">
+                                                </button>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mt-2">
+                                    <div class="input-group" (click)="onAddEducation()">
+                                        <button class="btn btn-outline-secondary bg-white ms-n5 addIcon" type="button">
+                                            <img src="assets/Images/icon-add-big.png">
+                                        </button>
+                                        <label class="addNew">Add New</label>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+<hr class="topDiv">
+<div class="row topDiv">
+    <div class="col-lg-12">
+        <button type="button" class="submitBtn" (click)="onSubmit()">Submit</button>
+        <button type="button" class="cancelBtn">Cancel</button>
+        
+    </div>
+</div>
+
+        </div>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button class="btn btn-outline-secondary bg-white ms-n5 selectionIcon" type="button">
+                                        <img src="assets/Images/selection-switch.png">
+                                    </button>
+                                    <b>
+                                        <label class="titleLabel">Preferred channel</label>
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 topDiv">
+                                    <div class="chip rounded-pill" *ngFor="let item of channel;">
+                                        {{item}}
+                                        <span class="closebtn" (click)="onClickRemove(item)">&times;</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mt-2">
+                                    <div class="input-group" (click)="onAddNew()">
+                                        <button class="btn btn-outline-secondary bg-white ms-n5 addIcon" type="button">
+                                            <img src="assets/Images/icon-add-big.png">
+                                        </button>
+                                        <label class="addNew">Add New</label>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottomCard">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <b>
+                                        <label class="titleLabel">Support team</label>
+                                    </b>
+                                </div>
+                            </div> 
+                            <div class="row topDiv">
+                                <div class="col-lg-12">
+                                   <b><label>Jane Goodall</label></b> 
+                                   <button class="btn btn-outline-secondary bg-white ms-n5 mailIcon" type="button">
+                                    <img src="assets/Images/icon-mail.png">
+                                </button>
+                                <button class="btn btn-outline-secondary bg-white ms-n5 callIcon" type="button">
+                                    <img src="assets/Images/icon-call.png">
+                                </button>
+                                </div>
+                                <div class="col-lg-12">
+                                    <b><label>Jane Goodall</label></b> 
+                                    <button class="btn btn-outline-secondary bg-white ms-n5 mailIcon" type="button">
+                                        <img src="assets/Images/icon-mail.png">
+                                    </button>
+                                    <button class="btn btn-outline-secondary bg-white ms-n5 callIcon" type="button">
+                                        <img src="assets/Images/icon-call.png">
+                                    </button>
+                                </div>
+                            </div>   
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <a href="">View more</a>
+                                </div>
+                            </div>                        
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.navbar-light{
+    background-color: #8626c3;
+    height: 80px;
+}
+.container-fluid{
+    padding: 0px;
+}
+.navbar-brand{
+    margin: 0px;
+}
+.img1Style{
+    margin-top: 10px;
+    margin-left: 32px;
+    margin-right: 24px;
+}
+.img2Style{
+    margin-right: 32px;
+    margin-left: 24px;
+}
+.searchField{
+    width: 500px;
+    height: 40px;
+}
+.searchIcon{
+  margin-bottom: 2px;
+}

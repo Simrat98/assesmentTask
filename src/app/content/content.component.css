@@ -1,0 +1,136 @@
+.container{
+    background-color: #FAFAFA;
+}
+
+.headerStyle{
+    font: Arial;
+    font-size: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: 106px;
+}
+.bottomCard{
+    margin-top: 20px;
+}
+.card{
+    border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+.card-body{
+    padding: 24px;
+}
+.formLabel{
+    font-size: 12px;
+    font: arial;
+    color: #555555;
+}
+.formInputStyle{
+    font-size: 16px;
+    font: arial;
+    background-color: #FAFAFA;
+    color: #000000;
+    border: none;
+}
+.rowBottom{
+    margin-bottom: 24px;
+}
+/* .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #7B1FA2;
+    background-color: #8626c3;
+}
+[type="radio"]:checked+label:after {
+    background-color: #8626c3;
+    
+  } */
+
+  .fieldIcons{
+    background-color: #FAFAFA !important;
+    border: none;
+
+  }
+  .radioIcon{
+    border: none;
+  }
+  .titleLabel{
+    font-size: 18px;
+  }
+  .selectionIcon{
+    padding-left: 0px;
+    border: none;
+
+  }
+  .addIcon{
+    border: none;
+/* margin-top: 24px;  */
+ }
+ .mailIcon{
+border: none;
+padding: 5px 16px 7px 187px;
+
+ }
+ .callIcon{
+    padding: 2px 0px 2px 0px;
+    border: none;
+
+
+ }
+ .addNew{
+    margin-top: 8px;
+ }
+ .topDiv{
+    margin-top: 24px;
+ }
+  .chip {
+    display: inline-block;
+    padding: 8px 18px 8px 8px;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 5px 5px 0 0;
+    /* color: $text-color; */
+    position: relative;
+    vertical-align: middle;
+    /* img {
+        float: left;
+        margin: 0 10px 0 -25px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    } */
+}
+.submitBtn{
+    background-color: #000000;
+    color: white;
+    font-size: 18px;
+    height: 40px;
+    width: 100px;
+    border-color: #000000;
+    margin-right: 24px;
+    border-radius: 4px;
+    text-align: center;
+
+
+}
+.cancelBtn{
+    background-color: white;
+    color: #000000;
+    height: 40px;
+    width: 100px;
+    font-size: 18px;
+    border-color: #000000;
+    border-radius: 4px;
+    text-align: center;
+
+}
+.editIcon{
+    border: none;
+    margin-right: 16px;
+  padding: 0px;
+}
+.trashIcon{
+    border: none;
+  padding: 0px;
+}
